@@ -11,4 +11,8 @@ module.exports = createConfig('jest', {
     'src/setupTest.jsx',
     'src/i18n',
   ],
+  testEnvironment: 'jsdom',
+  testEnvironmentOptions: {
+    url: 'http://localhost/',
+  },
 });
