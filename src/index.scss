@@ -1,6 +1,6 @@
 @use "@openedx/paragon/styles/css/core/custom-media-breakpoints" as paragonCustomMediaBreakpoints;
 
-
+@import "~@edx/brand/paragon/overrides";
 @import "~@edx/frontend-component-footer/dist/footer";
 @import "~@edx/frontend-component-header/dist/index";
 
@@ -22,6 +22,10 @@ body,
 
 .btn-md {
   font-size: 16px !important;
+}
+
+.btn-plain {
+    background-color: var(--pgn-color-card-bg-base) !important;
 }
 
 #post,
@@ -608,7 +612,7 @@ th, td {
   .pgn__modal,
   .pgn__form-label,
   .dropdown-menu,
-  .tox-tbtn, 
+  .tox-tbtn,
   .tooltip {
     font-size: 10px !important;
   }
