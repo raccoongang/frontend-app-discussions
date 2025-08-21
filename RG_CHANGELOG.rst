@@ -20,3 +20,7 @@ Added:
 ======
 * add direct import of openedx-brand overrides (TEA-18)
 * add design tokens support (TEA-18)
+
+Changed:
+========
+* changed FooterSlot import for custom fonts loading (TEA-289)
