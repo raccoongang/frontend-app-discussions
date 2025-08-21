@@ -378,6 +378,10 @@ header {
   z-index: 5000 !important;
 }
 
+.pgn__modal-footer .pgn__action-row {
+  gap: 8px;
+}
+
 #iconbutton-tooltip-top {
   z-index: 0;
 }
