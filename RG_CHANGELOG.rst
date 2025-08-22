@@ -23,4 +23,4 @@ Added:
 
 Changed:
 ========
-* changed FooterSlot import for custom fonts loading (TEA-289)
+* changed FooterSlot loading method to ensure basic `subscribe` works (TEA-289)
