@@ -8,6 +8,7 @@ import {
   matchPath, Route, Routes, useLocation, useMatch,
 } from 'react-router-dom';
 
+import { FooterSlot } from '@edx/frontend-component-footer';
 import { LearningHeader as Header } from '@edx/frontend-component-header';
 
 import { Spinner } from '../../components';
@@ -27,7 +28,6 @@ import { selectPostEditorVisible } from '../posts/data/selectors';
 import { isCourseStatusValid } from '../utils';
 import useFeedbackWrapper from './FeedbackWrapper';
 
-const FooterSlot = lazy(() => import('@edx/frontend-component-footer').then(module => ({ default: module.FooterSlot })));
 const PostActionsBar = lazy(() => import('../posts/post-actions-bar/PostActionsBar'));
 const CourseTabsNavigation = lazy(() => import('../../components/NavigationBar/CourseTabsNavigation'));
 const LegacyBreadcrumbMenu = lazy(() => import('../navigation/breadcrumb-menu/LegacyBreadcrumbMenu'));
