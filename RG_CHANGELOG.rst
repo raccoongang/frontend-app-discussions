@@ -20,3 +20,7 @@ Added:
 ======
 * add direct import of openedx-brand overrides (TEA-18)
 * add design tokens support (TEA-18)
+
+Changed:
+========
+* changed FooterSlot loading method to ensure basic `subscribe` works (TEA-289)
