@@ -6,6 +6,7 @@ import React, { StrictMode } from 'react';
 // eslint-disable-next-line import/no-unresolved
 import { createRoot } from 'react-dom/client';
 
+import { HeaderThemeSync } from '@edx/frontend-component-header';
 import {
   APP_INIT_ERROR, APP_READY, initialize, mergeConfig,
   subscribe,
@@ -13,7 +14,6 @@ import {
 import { AppProvider, ErrorPage } from '@edx/frontend-platform/react';
 
 import Head from './components/Head/Head';
-import ThemeCookieSync from './components/ThemeCookieSync';
 import { DiscussionsHome } from './discussions';
 import messages from './i18n';
 import store from './store';
@@ -25,7 +25,9 @@ subscribe(APP_READY, () => {
   rootNode.render(
     <StrictMode>
       <AppProvider store={store}>
-        <ThemeCookieSync />
+        {/* Headless theme-variant sync, reused from the shared (overridden) header.
+            Guard so a header build without this export can't crash the app. */}
+        {HeaderThemeSync && <HeaderThemeSync />}
         <Head />
         <DiscussionsHome />
       </AppProvider>
