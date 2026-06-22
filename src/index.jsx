@@ -13,6 +13,7 @@ import {
 import { AppProvider, ErrorPage } from '@edx/frontend-platform/react';
 
 import Head from './components/Head/Head';
+import ThemeCookieSync from './components/ThemeCookieSync';
 import { DiscussionsHome } from './discussions';
 import messages from './i18n';
 import store from './store';
@@ -24,6 +25,7 @@ subscribe(APP_READY, () => {
   rootNode.render(
     <StrictMode>
       <AppProvider store={store}>
+        <ThemeCookieSync />
         <Head />
         <DiscussionsHome />
       </AppProvider>

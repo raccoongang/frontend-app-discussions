@@ -387,6 +387,28 @@ header {
   color: var(--pgn-color-primary-500) !important
 }
 
+// The header theme toggle's icon sat ~2px below the button's vertical centre:
+// the `header span:first-child { margin-top:1px; margin-bottom:-1px }` rule above
+// also matches the IconButton's `.btn-icon__icon-container` span (a first-child
+// span in the header), shoving the icon down. Reset those margins and flex-centre
+// the icon so it is perfectly centred within the round button.
+.theme-toggle {
+  align-items: center;
+
+  .btn-icon__icon-container,
+  .pgn__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
 
 @media only screen and (max-width: 767px) {
   body:not(.tox-force-desktop) .tox .tox-dialog {
@@ -691,3 +713,4 @@ th, td {
     font-size: 10px;
   }
 }
+
