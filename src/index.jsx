@@ -6,6 +6,7 @@ import React, { StrictMode } from 'react';
 // eslint-disable-next-line import/no-unresolved
 import { createRoot } from 'react-dom/client';
 
+import { HeaderThemeSync } from '@edx/frontend-component-header';
 import {
   APP_INIT_ERROR, APP_READY, initialize, mergeConfig,
   subscribe,
@@ -24,6 +25,9 @@ subscribe(APP_READY, () => {
   rootNode.render(
     <StrictMode>
       <AppProvider store={store}>
+        {/* Headless theme-variant sync, reused from the shared (overridden) header.
+            Guard so a header build without this export can't crash the app. */}
+        {HeaderThemeSync && <HeaderThemeSync />}
         <Head />
         <DiscussionsHome />
       </AppProvider>
