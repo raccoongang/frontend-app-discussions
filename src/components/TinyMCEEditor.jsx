@@ -93,9 +93,31 @@ const TinyMCEEditor = (props) => {
   }, []);
 
   let contentStyle;
+  // The editor's writing-surface <iframe> loads ONLY this `content_style` (not the
+  // page's dark Paragon variant), so in dark mode its default black text renders
+  // unreadably on the dark body. When the shared `theme-variant=dark` cookie is set,
+  // append a dark content style (mirrors authoring's TinyMceWidget darkContentStyle
+  // and the legacy ORA editor head-extra injection): dark body + light text + the
+  // readable brand-green link shade used elsewhere for dark content surfaces.
+  const isDarkTheme = typeof document !== 'undefined'
+    && /(?:^|;)\s*theme-variant=dark(?:;|$)/.test(document.cookie || '');
+  const darkContentStyle = `
+    body, body.mce-content-body, body.text-editor {
+      background-color: #212529 !important;
+      color: #e8e8e8 !important;
+    }
+    body a { color: #6ccb6c !important; }
+    body blockquote {
+      border-left-color: #5c5c5c !important;
+      color: #e8e8e8 !important;
+    }
+    body code { background-color: rgba(255, 255, 255, 0.08) !important; color: #f48fb1 !important; }
+    body th, body td { border-color: #5c5c5c !important; }
+    body hr { border-color: #5c5c5c !important; }
+  `;
   // In the test environment this causes an error so set styles to empty since they aren't needed for testing.
   try {
-    contentStyle = [contentCss, contentUiCss, edxBrandCss].join('\n');
+    contentStyle = [contentCss, contentUiCss, edxBrandCss, isDarkTheme ? darkContentStyle : ''].join('\n');
   } catch (err) {
     contentStyle = '';
   }
