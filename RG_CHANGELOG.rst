@@ -21,3 +21,7 @@ Changed:
 Fixed:
 ======
 * Center the header theme-toggle icon within its button (ENG-63)
+
+Removed:
+========
+* codecov CI action — the fork has no codecov project, so the step failed every run (VERA-6)
