@@ -9,6 +9,9 @@ and this project adheres to customized Semantic Versioning e.g.: `teak-rg.1`
 [Unreleased]
 ************
 
+[release/teak-rg.4] - 2026-09-10
+********************************
+
 Added:
 ======
 * Adopt the shared ``theme-variant`` cookie as the active theme in all modes, including the in-context sidebar iframe (ENG-63)
