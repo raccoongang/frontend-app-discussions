@@ -12,7 +12,7 @@ and this project adheres to customized Semantic Versioning e.g.: `teak-rg.1`
 Fixed:
 ======
 * Course tabs that stop fitting move into "More..." whenever a tab or the bar changes width, not only on a window resize,
-  so the Discussions page no longer scrolls sideways on phones (RGInt-405)
+  so the Discussions page no longer scrolls sideways on phones (TEA-401)
 
 [release/teak-rg.4] - 2026-09-10
 ********************************
