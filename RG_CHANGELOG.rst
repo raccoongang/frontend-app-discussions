@@ -21,6 +21,8 @@ Changed:
 Fixed:
 ======
 * Center the header theme-toggle icon within its button (ENG-63)
+* Course tabs that stop fitting move into "More..." whenever a tab or the bar changes width, not only on a window resize,
+  so the Discussions page no longer scrolls sideways on phones (RGInt-405)
 
 Removed:
 ========
