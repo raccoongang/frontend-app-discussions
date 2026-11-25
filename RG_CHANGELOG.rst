@@ -9,6 +9,9 @@ and this project adheres to customized Semantic Versioning e.g.: `teak-rg.1`
 [Unreleased]
 ************
 
+[release/teak-rg.5] - 2026-11-25
+********************************
+
 Fixed:
 ======
 * Course tabs that stop fitting move into "More..." whenever a tab or the bar changes width, not only on a window resize,
